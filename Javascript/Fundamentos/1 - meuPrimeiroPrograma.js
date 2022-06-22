@@ -2,3 +2,4 @@
 
 console.log("Olá mundo!!")
 console.log("Me livrei da maldição")
+console.log("Git pull")
