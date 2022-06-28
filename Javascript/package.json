@@ -1,0 +1,20 @@
+{
+  "name": "bytebank",
+  "version": "1.0.0",
+  "description": "Projeto do bytebank alura",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasUlerich/Alura-formacao-react.git"
+  },
+  "author": "Lucas Ulerich",
+  "license": "ISC", 
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/LucasUlerich/Alura-formacao-react/issues"
+  },
+  "homepage": "https://github.com/LucasUlerich/Alura-formacao-react#readme"
+}

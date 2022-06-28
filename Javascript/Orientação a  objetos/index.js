@@ -1,59 +1,26 @@
-//Declaração de Classes
-class Cliente {
-  Nome
-  CPF
-  RG
-}
+// Import das Classes------------------------------------------------------------------------
+import {Cliente} from "./Cliente.js"
+import {ContaCorrente} from "./ContaCorrente.js"
 
-class ContaCorrente {
-  Agencia
-  _Saldo
-  sacar(valor) {
-    if (this._Saldo >= valor) {
-      this._Saldo -= valor
-      return valor
-    }
-  }
+// Clientes ---------------------------------------------------------------------------------
+const cliente1 = new Cliente("Lucas", 15631757956, 14523687 )
 
-  depositar(valor) {
-    if (valor <= 0) {
-      return 
-    }
-    this._Saldo += valor
-  }
-}
+const cliente2 = new Cliente("Adriene", 98765214732, 36521487)
 
-//-------------------------------------------------------------------------------------------
 
-// Clientes
-const cliente1 = new Cliente()
-cliente1.Nome = 'Adriene'
-cliente1.CPF = 15631757956
-cliente1.RG = 14523687
+//Contas Correntes --------------------------------------------------------------------------
 
-const cliente2 = new Cliente()
-cliente2.Nome = 'Lucas'
-cliente2.CPF = 98765214732
-cliente2.rg = 36521487
+const contaCorrenteLucas = new ContaCorrente(1001, cliente1)
 
-//-------------------------------------------------------------------------------------------
 
-// Contas correntes
-const contaCorrenteLucas = new ContaCorrente()
-contaCorrenteLucas._Saldo = 0
-contaCorrenteLucas.Agencia = 1001
+const contaCorrenteAdriene = new ContaCorrente(1002, cliente2)
 
-const contaCorrenteAdriene = new ContaCorrente()
-contaCorrenteAdriene._Saldo = 0
-contaCorrenteAdriene.Agencia = 1001
 
-//-------------------------------------------------------------------------------------------
+// //Testes ------------------------------------------------------------------------------------
+let valor = 200
+contaCorrenteLucas.depositar(500)
+contaCorrenteLucas.transferir(valor, contaCorrenteAdriene)
 
-contaCorrenteLucas.depositar(200)
-console.log(contaCorrenteLucas._Saldo)
-
-const valorSacado = contaCorrenteLucas.sacar(50)
-
-console.log(valorSacado)
-console.log(contaCorrenteLucas)
-
+console.log(cliente1)
+console.log(cliente2)
+console.log(ContaCorrente.numeroDeContas)
