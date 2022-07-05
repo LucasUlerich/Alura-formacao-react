@@ -3,6 +3,9 @@ export class Conta {
     this._saldo = saldoInicial
     this._cliente = cliente
     this._agencia = agencia
+    if(this.constructor == Conta){
+      console.log("Não deveria instaciar um ogjeto do tipo conta!")
+    }
   }
 
   set cliente(novoValor) {
@@ -20,12 +23,17 @@ export class Conta {
   }
 
   sacar(valor) {
-    let taxa = 1
+    let taxa = 1.1
+    return this._sacar(valor, taxa)
+  }
+
+  _sacar(valor, taxa) {
     const valorSacado = taxa * valor
     if (this._saldo >= valor) {
       this._saldo -= valor
       return valorSacado
     }
+    return 0
   }
 
   depositar(valor) {
